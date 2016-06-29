@@ -58,6 +58,10 @@ public class MainActivityFragment extends Fragment {
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {
+                String message = response.message();
+                Log.d("message",message);
+                String code = new Integer(response.code()).toString();
+                Log.d("message",code);
                 List<MovieResult> movieResultList = response.body().getMovieResultList();
                 adapter = new MovieAdapter(getActivity(),movieResultList);
                 recyclerView.setAdapter(adapter);

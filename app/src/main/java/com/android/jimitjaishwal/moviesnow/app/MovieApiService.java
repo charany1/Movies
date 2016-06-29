@@ -10,5 +10,5 @@ import retrofit2.http.Query;
 public interface MovieApiService {
 
     @GET("movie/top_rated")
-    Call<Movie> loadMovies(@Query("sort_by") String sort_by);
+    Call<Movie> loadMovies(@Query("api_key") String apiKey);
 }
